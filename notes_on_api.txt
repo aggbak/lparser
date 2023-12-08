@@ -1,0 +1,27 @@
+Operations seperate the queriable components of the lush website
+
+All api calls are made through the api gateway: https://www.lush.com/api/gateway
+
+It is additionally possible to gather collections from the json files
+https://www.lush.com/_next/data/production-df895fb0/us/en_us/c/charity-pot-collection.json?channel=us&language=en_us&slug=charity-pot-collection
+
+Channel is the country
+The language is the language of the country
+Slug will be the collection name
+
+This will return an id that can be used to query items in the api
+operationName: Product Details
+The ids are encoded using base64
+                    b64 decode
+"UHJvZHVjdDoyOTY5" ------------> "Product:2969"
+
+Means that we can iterate over each product (from 1 to the end)
+Can be used to give products ids in the sqlite3 table
+
+
+
+Can get root collections span using 
+
+operatorName:Menu
+name: commerce_web-uk-suggestions (adjust for country)
+languageCode: Country
